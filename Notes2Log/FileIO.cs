@@ -13,6 +13,7 @@ namespace Notes2Log_NS
         const string NODENAME = "Notes";
         const string NOTE_NODE_NAME = "NOTE";
         string path {  get {  return KSPUtil.ApplicationRootPath.Replace("\\", "/") + "GameData/Notes2Log/PluginData/" + NOTES; } }
+       
         internal void LoadSettings()
         {
             if (File.Exists(path))

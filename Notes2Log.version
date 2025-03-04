@@ -1,12 +1,12 @@
 {
   "NAME": "Notes2Log",
-  "URL": "http://ksp.spacetux.net/avc/Notes2Log",
+  "URL": "https://raw.githubusercontent.com/linuxgurugamer/Notes2Log/refs/heads/master/Notes2Log.versiong",
   "DOWNLOAD": "https://github.com/linuxgurugamer/Notes2Log/releases",
   "VERSION": {
     "MAJOR": 0,
     "MINOR": 0,
     "PATCH": 3,
-    "BUILD": 2
+    "BUILD": 3
   },
   "KSP_VERSION": {
     "MAJOR": 1,

@@ -1,5 +1,10 @@
 ﻿ChangeLog
 
+0.0.3.3
+	Make mod always around, avoids having to reinitialize every scene
+	Fixed issue where selecting an existing note would make changes go to that note immediately
+	Updated version file to use github for new version info
+
 0.0.3.2
 	Added "Notes2Log: " prefix to notes to make it easier to find in log file
 	Added missing title line print to log

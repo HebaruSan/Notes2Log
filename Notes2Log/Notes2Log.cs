@@ -11,7 +11,7 @@ using static Notes2Log_NS.RegisterToolbar;
 
 namespace Notes2Log_NS
 {
-    [KSPAddon(KSPAddon.Startup.AllGameScenes, false)]
+    [KSPAddon(KSPAddon.Startup.AllGameScenes, true)]
     public class Notes2Log : MonoBehaviour
     {
         const float WIDTH = 440;
@@ -31,6 +31,12 @@ namespace Notes2Log_NS
                 title = "";
                 note = "";
             }
+
+            public LogNote(LogNote n)
+            {
+                this.title = n.title;
+                this.note = n.note;
+            }
         }
 
         static internal List<LogNote> notes = new List<LogNote>();
@@ -49,6 +55,7 @@ namespace Notes2Log_NS
             AddToolbarButton();
             activeNote = new LogNote("", "");
             fileIO.LoadSettings();
+            DontDestroyOnLoad(this);
         }
 
         void AddToolbarButton()
@@ -103,8 +110,9 @@ namespace Notes2Log_NS
             foreach (var n in notes)
             {
                 GUILayout.BeginHorizontal();
-                if (GUILayout.Button(n.title, GUILayout.Width(120)))
-                    activeNote = n;
+                int cnt = Math.Min(n.title.Length, 15);
+                if (GUILayout.Button(n.title.Substring(0,cnt), GUILayout.Width(120)))
+                    activeNote = new LogNote(n);
                 GUILayout.EndHorizontal();
             }
             GUILayout.EndScrollView();
